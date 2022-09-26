@@ -1,0 +1,89 @@
+import java.util.Scanner;
+public class MyClass {
+    public static void main(String args[]) {
+        //matrix (for loop, nested loop, nested if, if, else, else if)
+        Scanner input = new Scanner(System.in);
+        System.out.println("Masukan bentuk matrix: ");
+        int m = input.nextInt();
+        int n = input.nextInt();
+        int array[][] = new int[100][100];
+        if(m!=n){
+            System.out.println("Masukan ulang bentuk matrix: ");
+            m = input.nextInt();
+            n = input.nextInt();
+            if(m!=n){
+                System.out.println("Mulai ulang program");
+            }
+            else if(m==n){
+                for(int i=0; i<m; i++){
+                    for(int j=0; j<n; j++){
+                        System.out.println("Masukan isi matrix index ke: " + (i) + (j));
+                        array[i][j] = input.nextInt();
+                    }
+                }
+                for(int i=0; i<m; i++){
+                    for(int j=0; j<n; j++){
+                        System.out.println(array[i][j]);
+                    }
+                }  
+            }
+        }
+        else{
+            for(int i=0; i<m; i++){
+                for(int j=0; j<n; j++){
+                    System.out.println("Masukan isi matrix index ke: " + (i) + (j));
+                    array[i][j] = input.nextInt();
+                }
+            }
+            for(int i=0; i<m; i++){
+                for(int j=0; j<n; j++){
+                    System.out.println(array[i][j]);
+                }
+            }  
+        }
+        
+        
+        //input nilai dan huruf mutu(while, break, continue, switch case)
+        while(true){
+            System.out.print("Masukkan Nilai: ");
+            int nilai=input.nextInt();
+            char huruf_mutu;
+            
+            if(nilai>100){
+                System.out.println("Nilai tidak sesuai");
+                break;
+            }
+            
+            if((nilai%10) == 0){
+                continue;
+            }   
+            
+            if(nilai>=76){
+                huruf_mutu='A';
+            }else if(nilai>=71){
+                huruf_mutu='B';
+             }else if(nilai>=66){
+                huruf_mutu='C';
+              }else{
+                huruf_mutu='D';
+               }
+            
+            switch(huruf_mutu){
+                case'A':
+                    System.out.println("Sangat Baik");
+                    break;
+                case'B':
+                    System.out.println("Baik");
+                    break;
+                case'C':
+                    System.out.println("Cukup");
+                    break;
+                case'D':
+                    System.out.println("Kurang");
+                    break;
+                default:
+                    System.out.println("Huruf mutu tidak sesuai");
+            }
+        }  
+    }    
+}        
